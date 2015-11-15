@@ -31,7 +31,8 @@ To run a local development enviornment, you must have virtualbox and vagrant ins
 1. `cd` into project directory
 2. `vagrant up`
 3. `ssh vagrant` (this will log you into the virtual machine)
-4. `./mange.py runserver [::]:8000`
+4. `/var/www/postinstall.sh`
+4. `/var/www/mange.py runserver [::]:8000`
 3. Browse to <http://localhost:8000> to view application
 
 
