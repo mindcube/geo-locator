@@ -14,11 +14,12 @@ from sys import path
 
 ROOT_DIR = environ.Path(__file__) - 3  # (/a/b/myfile.py - 3 = /)
 PROJECT_ROOT = ROOT_DIR.path('project')
-APPS_DIR = ROOT_DIR.path('apps')
+APPS_DIR = PROJECT_ROOT.path('apps')
 
 env = environ.Env()
 
 path.append(str(PROJECT_ROOT))
+path.append(str(APPS_DIR))
 
 # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -37,7 +38,9 @@ DJANGO_APPS = (
 THIRD_PARTY_APPS = ()
 
 # Apps specific for this project go here.
-LOCAL_APPS = ()
+LOCAL_APPS = (
+    'geo_locator',
+)
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
