@@ -5,20 +5,20 @@ OS_REQUIREMENTS_FILENAME="requirements.apt"
 # Handle call with wrong command
 function wrong_command()
 {
-  echo "${0##*/} - unknown command: '${1}'"
-  usage_message
+    echo "${0##*/} - unknown command: '${1}'"
+    usage_message
 }
 
 # Print help / script usage
 function usage_message()
 {
-  echo "usage: ./${0##*/} <command>"
-  echo "available commands are:"
-  echo -e "\tlist\t\tPrint a list of all packages defined on ${OS_REQUIREMENTS_FILENAME} file"
-  echo -e "\thelp\t\tPrint this help"
-  echo -e "\n\tCommands that require superuser permission:"
-  echo -e "\tinstall\t\tInstall packages defined on ${OS_REQUIREMENTS_FILENAME} file. Note: This\n\t\t\t   does not upgrade the packages already installed for new\n\t\t\t   versions, even if new version is available in the repository."
-  echo -e "\tupgrade\t\tSame that install, but upgrate the already installed packages,\n\t\t\t   if new version is available."
+    echo "usage: ./${0##*/} <command>"
+    echo "available commands are:"
+    echo -e "\tlist\t\tPrint a list of all packages defined on ${OS_REQUIREMENTS_FILENAME} file"
+    echo -e "\thelp\t\tPrint this help"
+    echo -e "\n\tCommands that require superuser permission:"
+    echo -e "\tinstall\t\tInstall packages defined on ${OS_REQUIREMENTS_FILENAME} file. Note: This\n\t\t\t   does not upgrade the packages already installed for new\n\t\t\t   versions, even if new version is available in the repository."
+    echo -e "\tupgrade\t\tSame that install, but upgrate the already installed packages,\n\t\t\t   if new version is available."
 
 }
 

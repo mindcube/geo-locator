@@ -37,7 +37,3 @@ class GeoIpMiddleware(object):
             'latitude': response.location.latitude,
             'longitude': response.location.longitude
         }
-
-
-
-
