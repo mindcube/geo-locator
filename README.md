@@ -26,7 +26,7 @@ Demo: <https://blooming-basin-5924.herokuapp.com/>
 - Bootstrap
 
 ### Project Setup
-To run a local development enviornment, you must have virtualbox and vagrant installed.
+To run a local development environment, you *must* have virtualbox and vagrant installed.
 
 **Setup Steps:**
 
@@ -34,7 +34,13 @@ To run a local development enviornment, you must have virtualbox and vagrant ins
 2. `vagrant up`
 3. `ssh vagrant` (this will log you into the virtual machine)
 4. `/var/www/postinstall.sh`
-4. `/var/www/mange.py runserver [::]:8000`
-3. Browse to <http://localhost:8000> to view application
+5. `/var/www/mange.py runserver [::]:8000`
+6. Browse to <http://localhost:8000> to view application
+
+**Testing:**
+
+1. `vagrant ssh`
+2. `cd /var/www`
+3. `./manage.py test`
 
 
