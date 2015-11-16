@@ -2,6 +2,8 @@
 
 This is a simple application that will detect users' latitude and logitude, and display in on a Google map.
 
+Demo: <https://blooming-basin-5924.herokuapp.com/>
+
 ## Project Requirements
 - looking for coding style
 - test coverage
@@ -15,7 +17,7 @@ This is a simple application that will detect users' latitude and logitude, and 
 
 - Google Maps API
 - Maxmind Lite GeoLookup database for server based IP geo locating
-- Google PLaces API for autocomplete lookups
+- Google Places API for autocomplete lookups
 
 **Stack for quick spin ups:**
 
