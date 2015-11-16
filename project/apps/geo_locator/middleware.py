@@ -17,12 +17,10 @@ class GeoIpMiddleware(object):
             ip_address = get_real_ip(request)
         else:
             # We'll set it to an LA based IP address if in debug mode
-            ip_address = '172.249.173.233'
+            ip_address = get_ip(request)
 
         if not ip_address:
             return None
-
-        print(ip_address)
 
         try:
             geodb_client = database.Reader(

@@ -7,14 +7,18 @@ APP = {
                 APP.drawMap(position.coords.latitude, position.coords.longitude);
             }, function() {
                 if (APP.serverCoords()) {
-                    APP.drawMap(Number(window.latitude), Number(window.longitude))
+                    APP.drawMap(Number(window.server_latitude), Number(window.server_longitude))
+                } else {
+                    console.log('No server coords.  Using default of LA as placeholder')
+                    APP.drawMap(34.044955, -118.24518)
                 }
             });
         } else if (APP.serverCoords()) {
             // no browser support for geolocation api
-            APP.drawMap(Number(window.latitude), Number(window.longitude))
+            APP.drawMap(Number(window.server_latitude), Number(window.server_longitude))
         } else {
-            error('No GEO data available.')
+            console.log('No GEO data available.')
+            APP.drawMap(34.044955, -118.24518)
         }
 
         APP.initPlaces();
@@ -24,7 +28,6 @@ APP = {
     bindLookupForm: function() {
         $('.address-form').submit(function(e) {
             e.preventDefault();
-            console.log('yo');
         });
     },
 
@@ -40,7 +43,8 @@ APP = {
     },
 
     serverCoords: function() {
-        if (typeof(window.latitude == "string")) {
+        if (window.server_latitude > 0) {
+            console.log('test', window.server_latitude);
             return true;
         }
         return false;
@@ -50,7 +54,7 @@ APP = {
         var coords = new google.maps.LatLng(latitude, longitude);
 
         var options = {
-            zoom: 15,
+            zoom: 14,
             center: coords,
             mapTypeControl: false,
             navigationControlOptions: {

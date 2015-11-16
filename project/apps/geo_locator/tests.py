@@ -7,8 +7,19 @@ class SimpleTest(TestCase):
         self.client = Client()
 
     def test_details(self):
-        # Issue a GET request.
         response = self.client.get('/')
 
-        # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
+
+    def test_geolocation_real_ip(self):
+        # test with a known ip address
+        response = self.client.get('/', REMOTE_ADDR='172.249.173.233')
+
+        self.assertEqual(response.context['location']['latitude'], 34.1125)
+        self.assertEqual(response.context['location']['longitude'], -118.1908)
+
+    def test_geolocation_local_ip(self):
+        # test with local IP
+        response = self.client.get('/', REMOTE_ADDR='127.0.0.1')
+
+        self.assertIsNone(response.context['location'])

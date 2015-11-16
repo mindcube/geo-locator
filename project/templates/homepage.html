@@ -4,8 +4,8 @@
     {# Here we are dumping the server based location results into the global window variable. #}
     {% if location %}
         <script>
-            window.latitude = '{{ location.latitude|escape }}';
-            window.longitude = '{{ location.longitude|escape }}';
+            window.server_latitude = '{{ location.latitude|escape }}';
+            window.server_longitude = '{{ location.longitude|escape }}';
         </script>
     {% endif %}
 {% endblock %}
