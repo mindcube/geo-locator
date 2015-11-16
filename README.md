@@ -28,6 +28,9 @@ Demo: <https://blooming-basin-5924.herokuapp.com/>
 ### Project Setup
 To run a local development environment, you *must* have virtualbox and vagrant installed.
 
+**Virtualbox** can be downloaded from <https://www.virtualbox.org/wiki/Downloads>
+**Vagrant** can be downloaded from <https://www.vagrantup.com/downloads.html>
+
 **Setup Steps:**
 
 1. `cd` into project directory
