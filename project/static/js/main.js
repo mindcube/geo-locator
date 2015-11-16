@@ -21,6 +21,9 @@ APP = {
             APP.drawMap(34.044955, -118.24518)
         }
 
+        APP.latitude_field = $('.coords #latitude');
+        APP.longitude_field = $('.coords #longitude');
+
         APP.initPlaces();
         APP.bindLookupForm();
     },
@@ -29,6 +32,11 @@ APP = {
         $('.address-form').submit(function(e) {
             e.preventDefault();
         });
+    },
+
+    updateLatLong: function(latitude, longitude) {
+        APP.latitude_field.val(latitude);
+        APP.longitude_field.val(longitude);
     },
 
     initPlaces: function() {
@@ -68,5 +76,7 @@ APP = {
             map: map,
             title: "You are here!"
         });
+
+        APP.updateLatLong(latitude, longitude);
     }
 }
