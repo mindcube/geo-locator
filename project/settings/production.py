@@ -13,6 +13,8 @@ from django.utils import six
 
 from .base import *  # noqa
 
+DEBUG = False
+
 # SECRET CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
