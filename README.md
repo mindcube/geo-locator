@@ -3,25 +3,25 @@
 This is a simple application that will detect users' latitude and logitude, and display in on a Google map.
 
 ## Project Requirements
-- looking for coding style 
-- test coverage 
-- usage instructions 
-- check in code in github with clear README on how to deploy/use 
-- use python 3.0 
+- looking for coding style
+- test coverage
+- usage instructions
+- check in code in github with clear README on how to deploy/use
+- use python 3.0
 - use any high level framework for python django,flash,tornado
-- use any javascript libraries as needed for frontend 
+- use any javascript libraries as needed for frontend
 
 **Utilizes the following APIs:**
 
 - Google Maps API
-- Something else awesome
+- Maxmind Lite GeoLookup database for server based IP geo locating
+- Google PLaces API for autocomplete lookups
 
 **Stack for quick spin ups:**
 
 - Django/Postgres
 - Python 3
 - Bootstrap
-- Angular.js
 
 ### Project Setup
 To run a local development enviornment, you must have virtualbox and vagrant installed.

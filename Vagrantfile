@@ -40,9 +40,8 @@ Vagrant.configure(2) do |config|
         cd /var/www; sudo ./install_os_dependencies.sh install;
         echo '*** Installing python dependencies'
         ./install_python_dependencies.sh;
-        # echo '*** Installing npm and project dependencies'
-        # cd /var/www; npm install; sudo npm install -g grunt-cli
-        # sudo gem install bourbon
-        # sudo gem install compass
+        echo '*** Installing c extension for maxmind db reader'
+        sudo add-apt-repository -y ppa:maxmind/ppa
+        sudo aptitude update; sudo aptitude install libmaxminddb0 libmaxminddb-dev mmdb-bin;
     SHELL
 end

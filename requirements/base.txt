@@ -38,3 +38,5 @@ redis>=2.10.0
 
 # Your custom requirements go here
 django-grappelli
+geoip2
+django-ipware

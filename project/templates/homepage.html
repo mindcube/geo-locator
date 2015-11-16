@@ -1,1 +1,40 @@
 {% extends "base.html" %}
+
+{% block head %}
+    {# Here we are dumping the server based location results into the global window variable. #}
+    {% if location %}
+        <script>
+            window.latitude = '{{ location.latitude|escape }}';
+            window.longitude = '{{ location.longitude|escape }}';
+        </script>
+    {% endif %}
+{% endblock %}
+
+
+{% block jumbotron %}
+    <div class="jumbotron">
+        <div class="container">
+            <h1>You are here. <small>Or wherever you want to be!</small></h1>
+             <div id="map"></div>
+             <form class="form-inline address-form">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="address" name="address" placeholder="Address">
+                </div>
+                <input type="hidden" id="latitude" name="latitude" />
+                <input type="hidden" id="longitude" name="longitude" />
+                <button type="submit" class="btn btn-default">Lookup Address</button>
+            </form>
+        </div>
+    </div>
+{% endblock jumbotron %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Look up any address!</h2>
+                <p>First, we prompt the user if they want us to allow us to grab their location.  If they deny the request, fallback to server based geo-location.</p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

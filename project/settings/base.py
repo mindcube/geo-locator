@@ -54,6 +54,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'geo_locator.middleware.GeoIpMiddleware',
 )
 
 # DEBUG
@@ -238,3 +239,6 @@ LOGGING = {
 
 # Location of root django.contrib.admin URL, use {% url 'admin:index' %}
 ADMIN_URL = r'^admin/'
+
+# path of free maxmind geo ip address database
+GEOIP_PATH = str(PROJECT_ROOT.path('geolite_data'))
