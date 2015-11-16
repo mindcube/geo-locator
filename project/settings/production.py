@@ -73,10 +73,10 @@ STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 # ------------------------------------------------------------------------------
 # See:
 # https://docs.djangoproject.com/en/dev/ref/templates/api/#django.template.loaders.cached.Loader
-# TEMPLATES[0]['OPTIONS']['loaders'] = [
-#     ('django.template.loaders.cached.Loader', [
-#         'django.template.loaders.filesystem.Loader', 'django.template.loaders.app_directories.Loader', ]),
-# ]
+TEMPLATES[0]['OPTIONS']['loaders'] = [
+    ('django.template.loaders.cached.Loader', [
+        'django.template.loaders.filesystem.Loader', 'django.template.loaders.app_directories.Loader', ]),
+]
 
 # DATABASE CONFIGURATION
 # ------------------------------------------------------------------------------
