@@ -9,7 +9,7 @@ APP = {
                 if (APP.serverCoords()) {
                     APP.drawMap(Number(window.server_latitude), Number(window.server_longitude))
                 } else {
-                    console.log('No server coords.  Using default of LA as placeholder')
+                    // No server coords.  Using default of LA as placeholder
                     APP.drawMap(34.044955, -118.24518)
                 }
             });
@@ -17,7 +17,7 @@ APP = {
             // no browser support for geolocation api
             APP.drawMap(Number(window.server_latitude), Number(window.server_longitude))
         } else {
-            console.log('No GEO data available.')
+            // No GEO data available.
             APP.drawMap(34.044955, -118.24518)
         }
 
@@ -44,7 +44,6 @@ APP = {
 
     serverCoords: function() {
         if (window.server_latitude > 0) {
-            console.log('test', window.server_latitude);
             return true;
         }
         return false;
